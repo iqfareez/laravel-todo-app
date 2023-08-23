@@ -8,9 +8,23 @@
                     <div class="card-header">{{ __('Dashboard') }}</div>
 
                     <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Title</th>
+                                    <th scope="col">Description</th>
+                                    <th scope="col">Completed</th>
+                                    <th scope="col">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
 
+                                </tr>
 
-                        Todos index page
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
