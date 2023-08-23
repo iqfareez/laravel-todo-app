@@ -8,12 +8,22 @@
                     <div class="card-header">My Todos App</div>
 
                     <div class="card-body">
+                        {{-- error alert --}}
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+
                         <form method="POST" action="{{ route('todos.store') }}">
                             @csrf
                             <div class="mb-3">
                                 <label class="form-label">Title</label>
                                 <input type="text" class="form-control" aria-describedby="emailHelp" name="title">
-                                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Description</label>
