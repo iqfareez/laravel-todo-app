@@ -37,9 +37,8 @@ class TodoController extends Controller
     {
         $todo = Todo::find($id);
         if (!$todo) {
-            return to_route('todos.index')->withErrors([
-                'error' => 'Unable to locate the Todo'
-            ]);
+            request()->session()->flash('error', 'Unable to locate the Todo');
+            return to_route('todos.index');
         }
         return view('todos.show', compact('todo'));
     }
