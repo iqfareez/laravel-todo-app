@@ -52,11 +52,12 @@
                                                 @endif
                                             </td>
                                             <td id="outer">
+                                                <a href="{{ route('todos.show', $todoData->id) }}"
+                                                    class="btn btn-sm btn-success inner">View</a>
                                                 <a href="" class="btn btn-sm btn-secondary inner">Edit</a>
-                                                <a href="" class="btn btn-sm btn-danger inner">Remove</a>
                                                 <form action="" class="inner">
                                                     <input type="hidden" name="todo_id" value="{{ $todoData->id }}">
-                                                    <input type="submit" class="btn btn-sm btn-info">
+                                                    <input type="submit" class="btn btn-sm btn-danger" value="Delete">
                                                 </form>
                                             </td>
                                         </tr>

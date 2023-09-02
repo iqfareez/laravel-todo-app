@@ -32,4 +32,15 @@ class TodoController extends Controller
 
         return to_route('todos.index');
     }
+
+    public function show($id)
+    {
+        $todo = Todo::find($id);
+        if (!$todo) {
+            return to_route('todos.index')->withErrors([
+                'error' => 'Unable to locate the Todo'
+            ]);
+        }
+        return view('todos.show', compact('todo'));
+    }
 }
