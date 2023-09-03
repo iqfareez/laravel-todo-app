@@ -42,4 +42,19 @@ class TodoController extends Controller
         }
         return view('todos.show', compact('todo'));
     }
+
+    public function edit($id)
+    {
+        $todo = Todo::find($id);
+        if (!$todo) {
+            request()->session()->flash('error', 'Unable to locate the Todo');
+            return to_route('todos.index');
+        }
+        return view('todos.edit', compact('todo'));
+    }
+
+    public function update(TodoRequest $request)
+    {
+        dd($request);
+    }
 }
